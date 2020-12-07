@@ -23,6 +23,16 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://chrzarma.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: chrzarma
+linkedin_username: chrzarma
+
+# Fields minima uses, but are not defaulted with the jekyll new command.
+# Author is the default for posts, the Atom feed, and is used in the footer.
+author: Christian Zarmakoupis
+
+# New fields not defaulted by jekyll-new with the minima theme
+# Add a copyright. A copyright symbol year will be added automatically
+# copyright: Company Name, Inc.
+copyright: "Christian Zarmakoupis"
 
 # Build settings
 # Removed minima theme as it is now a regular theme.
