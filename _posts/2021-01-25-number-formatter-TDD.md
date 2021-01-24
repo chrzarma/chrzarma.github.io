@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to create a custom Number Formatter using TDD"
-date:   2021-01-25 01:38:12 +0200
+date:   2021-01-25
 ---
 
 ## Presentation of the problem
