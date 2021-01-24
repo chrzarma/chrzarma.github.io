@@ -30,12 +30,13 @@ First, I created a list of the rules and grouped possible scenarios that I wante
 So I ended up with these cases:
 
 1. Returns string of number with two fraction digits for number with two fraction digits:
-    Input: 1.23, Output: “1.23”
+
     Input | Output
     ------------ | -------------
     1.23 | “1.23”
 
 2. Returns string of number rounded to two fraction digits:
+    
     Input | Output
     ------------ | -------------
     14.00023 | “14.00”
@@ -44,7 +45,8 @@ So I ended up with these cases:
     1.230000 | “1.23”
 
 3. Returns string of number rounded to two significant digits for values less than 1:
-Input | Output
+    
+    Input | Output
     ------------ | -------------
     0.000032 | “0.000032”
     0.0000323343 | “0.000032”
@@ -76,6 +78,7 @@ func format(_ value: Decimal) -> String {
     return nf.string(from: value as NSNumber) ?? ""
 }
 ```
+
 However, the test didn’t pass as I initially expected. The problem was that I didn’t take into concideration the device’s locale which was different from the one used in the tests (the locale’s separator was “,” and the locale used in the tests was “.”). But that was good progress as I got to see the test failing.
 
 ![](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestFailsPassing.png)
@@ -93,6 +96,7 @@ func format(_ value: Decimal, locale: Locale) -> String {
     return nf.string(from: value as NSNumber) ?? ""
 }
 ```
+
 ```swift
 @testable import Formatter
  
@@ -105,6 +109,7 @@ class FormatterTests: XCTestCase {
   }
 }
 ```
+
 The test was finally green!
 
 ![](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestPasses.png)
