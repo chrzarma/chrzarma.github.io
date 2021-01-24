@@ -66,7 +66,7 @@ The next step was to create a test assertion for each of the cases I mentioned a
 
 After writing the first test naturally there was a build error since there's no production code yet.
 
-![1](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-FirstTestBuildFail.png?raw=true)
+![2021-01-25-FirstTestBuildFail](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-FirstTestBuildFail.png?raw=true)
 
 The next step was to write the minimum code possible to make the project build again and pass the test.
 
@@ -81,7 +81,7 @@ func format(_ value: Decimal) -> String {
 
 However, the test didn’t pass as I initially expected. The problem was that I didn’t take into concideration the device’s locale which was different from the one used in the tests (the locale’s separator was “,” and the locale used in the tests was “.”). But that was good progress as I got to see the test failing.
 
-![2](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestFailsPassing.png)
+![2021-01-25-TestFailsPassing](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestFailsPassing.png)
 
 So taking into consideration the devices locale I ended up with the following code: 
 
@@ -112,7 +112,7 @@ class FormatterTests: XCTestCase {
 
 The test was finally green!
 
-![3](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestPasses.png)
+![2021-01-25-TestPasses](https://github.com/chrzarma/chrzarma.github.io/blob/main/images/2021-01-25-TestPasses.png)
 
 At this point there was nothing to refactor so I continued with the next tests following the same pattern for all the cases I had set.
 
